@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api-mutant
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+spring:
+  datasource:
+    url: ENC(/2tN5eIXCKt5FiE/SLFEVu3s5FKELE/PHUAv0eovdm8AXyiRJ3qbE3CsgYzJ6xSnQfC8AYtN4vVnu4hxSoy+gK092FMg3ntCllHZzm2t7SZYE++EBfpYPaoJjlbD8AhV)
+    username: ENC(Bvs+MKlxJu1VwVdh/Se0fw==)
+    password: ENC(WWA7piLpxV/GUMF3ICR4p0nNKRZGmtGt)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+cloud:
+  aws:
+    region:
+      static: us-east-2
+      auto: false
+    credentials:
+      access-key: ENC(5JN3hNGwLXDPjOGjAaASqLFaI8usrcVa+8fgJXuyTsk=)
+      secret-key: ENC(vPh2c9bYiSPDZ+ZAe27hfZ4D+LaRc42qWP3Y1azCOylF3kwfB4LBz9KR8MLoVs7nn+BArM8pYGQ=)
+    end-point:
+      uri: ENC(pbIvMU5IWg7kddXl8XVljDZdlyt/GHGNS30FyU5qcwyytvBjyyFlWM2J5DuBKl9MJ18VYUhIrrNeAzv1RiYft1tKr7lbS1wk)
