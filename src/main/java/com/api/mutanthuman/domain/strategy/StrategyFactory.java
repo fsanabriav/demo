@@ -18,13 +18,13 @@ public class StrategyFactory {
     private static final Map<String, Supplier<ISearchStrategy>> ESTRATEGIES;
 
     static {
-        final Map<String, Supplier<ISearchStrategy>> searchStrategiea = new HashMap<>();
-        searchStrategiea.put(SearchStrategyType.HORIZONTAL.name(), SearchStrategyHotizontal::new);
-        searchStrategiea.put(SearchStrategyType.VERTICAL.name(), SearchStrategyVertical::new);
-        searchStrategiea.put(SearchStrategyType.DIAGONALS_TO_DOWN.name(), SearchStrategyDiagonalsToDown::new);
-        searchStrategiea.put(SearchStrategyType.DIAGONALS_TO_UP.name(), SearchStrategyDiagonalsToUp::new);
+        final Map<String, Supplier<ISearchStrategy>> searchStrategy = new HashMap<>();
+        searchStrategy.put(SearchStrategyType.HORIZONTAL.name(), SearchStrategyHotizontal::new);
+        searchStrategy.put(SearchStrategyType.VERTICAL.name(), SearchStrategyVertical::new);
+        searchStrategy.put(SearchStrategyType.DIAGONALS_TO_DOWN.name(), SearchStrategyDiagonalsToDown::new);
+        searchStrategy.put(SearchStrategyType.DIAGONALS_TO_UP.name(), SearchStrategyDiagonalsToUp::new);
 
-        ESTRATEGIES = Collections.unmodifiableMap(searchStrategiea);
+        ESTRATEGIES = Collections.unmodifiableMap(searchStrategy);
     }
     public ISearchStrategy getSearchStrategy(String searchStratey) {
         Supplier<ISearchStrategy> strategy = ESTRATEGIES.get(searchStratey);
