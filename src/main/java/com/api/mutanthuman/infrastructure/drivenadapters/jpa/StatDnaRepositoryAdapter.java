@@ -1,6 +1,6 @@
 package com.api.mutanthuman.infrastructure.drivenadapters.jpa;
 
-import com.api.mutanthuman.domain.model.analysisdna.StatDnaAnalized;
+import com.api.mutanthuman.domain.model.analysisdna.StatDnaAnalyzed;
 import com.api.mutanthuman.domain.model.analysisdna.gateway.IStatDnaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -18,12 +18,12 @@ public class StatDnaRepositoryAdapter implements IStatDnaRepository {
      * @return
      */
     @Override
-    public StatDnaAnalized getStatsDna() {
-        List<AnalyzedDnaData> dnasAnalized = (List<AnalyzedDnaData>) statDnaDataRepository.findAll();
-        Double countHumanDna = countHuman(dnasAnalized);
-        Double countMutantDna = countMutant(dnasAnalized);
+    public StatDnaAnalyzed getStatsDna() {
+        List<AnalyzedDnaData> analyzedDNAs = (List<AnalyzedDnaData>) statDnaDataRepository.findAll();
+        Double countHumanDna = countHuman(analyzedDNAs);
+        Double countMutantDna = countMutant(analyzedDNAs);
 
-        return StatDnaAnalized.builder()
+        return StatDnaAnalyzed.builder()
                 .countHumanDna(countHumanDna)
                 .countMutantDna(countMutantDna)
                 .ratio(countMutantDna/countHumanDna)

@@ -2,7 +2,7 @@ package com.api.mutanthuman.infrastructure.drivenadapters.messagebroker.analysis
 
 import com.api.mutanthuman.domain.model.analysisdna.AnalyzedDna;
 import com.api.mutanthuman.domain.model.analysisdna.gateway.ISendToSaveDnaPublisher;
-import com.api.mutanthuman.infrastructure.config.messagebroker.analysisdna.AnalisysDnaMessage;
+import com.api.mutanthuman.infrastructure.config.messagebroker.analysisdna.AnalysisDnaMessage;
 import io.awspring.cloud.messaging.core.QueueMessagingTemplate;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +28,6 @@ public class SaveDnaPublisher implements ISendToSaveDnaPublisher {
 
     @Override
     public void sendMessageToSave(AnalyzedDna analyzedDna) {
-        queueMessagingTemplate.convertAndSend(endpoint, mapper.map(analyzedDna, AnalisysDnaMessage.class));
+        queueMessagingTemplate.convertAndSend(endpoint, mapper.map(analyzedDna, AnalysisDnaMessage.class));
     }
 }

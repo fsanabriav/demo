@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class StatDnaAnalized {
+public class StatDnaAnalyzed {
     private Double countHumanDna;
     private Double countMutantDna;
     private Double ratio;

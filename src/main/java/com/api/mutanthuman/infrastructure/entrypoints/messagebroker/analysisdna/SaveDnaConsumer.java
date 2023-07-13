@@ -1,7 +1,7 @@
 package com.api.mutanthuman.infrastructure.entrypoints.messagebroker.analysisdna;
 
 import com.api.mutanthuman.domain.model.analysisdna.AnalyzedDna;
-import com.api.mutanthuman.infrastructure.config.messagebroker.analysisdna.AnalisysDnaMessage;
+import com.api.mutanthuman.infrastructure.config.messagebroker.analysisdna.AnalysisDnaMessage;
 import com.api.mutanthuman.infrastructure.drivenadapters.jpa.AnalysisDnaRepositoryAdapter;
 import io.awspring.cloud.messaging.listener.SqsMessageDeletionPolicy;
 import io.awspring.cloud.messaging.listener.annotation.SqsListener;
@@ -19,7 +19,7 @@ public class SaveDnaConsumer {
     private ObjectMapper mapper;
 
     @SqsListener(value = "dna_analized", deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
-    public void processMessage(AnalisysDnaMessage analisysDnaMessage) {
-        analysisDnaRepositoryAdapter.save(mapper.map(analisysDnaMessage, AnalyzedDna.class));
+    public void processMessage(AnalysisDnaMessage analysisDnaMessage) {
+        analysisDnaRepositoryAdapter.save(mapper.map(analysisDnaMessage, AnalyzedDna.class));
     }
 }

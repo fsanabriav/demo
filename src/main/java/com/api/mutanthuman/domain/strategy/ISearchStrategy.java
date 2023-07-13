@@ -10,5 +10,5 @@ public interface ISearchStrategy {
      * @param sequencesDNA
      * @return
      */
-    long countSequencesMuntantInDna(String[] sequencesDNA);
+    long countSequencesMutantInDna(String[] sequencesDNA);
 }

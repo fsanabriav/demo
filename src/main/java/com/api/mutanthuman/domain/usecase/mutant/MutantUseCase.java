@@ -45,7 +45,7 @@ public class MutantUseCase {
         long validSequencesFound = 0;
         for (SearchStrategyType strategyType : SearchStrategyType.values()) {
             strategy = strategyFactory.getSearchStrategy(strategyType.name());
-            validSequencesFound += strategy.countSequencesMuntantInDna(sequencesDNA);
+            validSequencesFound += strategy.countSequencesMutantInDna(sequencesDNA);
             if(validSequencesFound >= Constants.MIN_SEQUENCES_TO_BE_MUTANT) {
                 isMutantDna = true;
                 break;

@@ -1,4 +1,4 @@
-package com.api.mutanthuman.domain.strategy.strategyspecific;
+package com.api.mutanthuman.domain.strategy.specificstrategy;
 
 import com.api.mutanthuman.domain.common.sequence.SequenceUtil;
 import com.api.mutanthuman.domain.strategy.ISearchStrategy;
@@ -13,7 +13,7 @@ import java.util.List;
 public class SearchStrategyDiagonalsToDown implements ISearchStrategy {
 
     @Override
-    public long countSequencesMuntantInDna(String[] sequencesDNA) {
+    public long countSequencesMutantInDna(String[] sequencesDNA) {
         List<String> diagonalsToDown = buildDiagonalsToDown(sequencesDNA);
         return SequenceUtil.countValidSequences(diagonalsToDown);
     }

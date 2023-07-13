@@ -1,10 +1,10 @@
 package com.api.mutanthuman.domain.strategy;
 
 import com.api.mutanthuman.domain.exception.ApplicationException;
-import com.api.mutanthuman.domain.strategy.strategyspecific.SearchStrategyDiagonalsToDown;
-import com.api.mutanthuman.domain.strategy.strategyspecific.SearchStrategyDiagonalsToUp;
-import com.api.mutanthuman.domain.strategy.strategyspecific.SearchStrategyHotizontal;
-import com.api.mutanthuman.domain.strategy.strategyspecific.SearchStrategyVertical;
+import com.api.mutanthuman.domain.strategy.specificstrategy.SearchStrategyDiagonalsToDown;
+import com.api.mutanthuman.domain.strategy.specificstrategy.SearchStrategyDiagonalsToUp;
+import com.api.mutanthuman.domain.strategy.specificstrategy.SearchStrategyHotizontal;
+import com.api.mutanthuman.domain.strategy.specificstrategy.SearchStrategyVertical;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -26,10 +26,10 @@ public class StrategyFactory {
 
         ESTRATEGIES = Collections.unmodifiableMap(searchStrategy);
     }
-    public ISearchStrategy getSearchStrategy(String searchStratey) {
-        Supplier<ISearchStrategy> strategy = ESTRATEGIES.get(searchStratey);
+    public ISearchStrategy getSearchStrategy(String searchStrategy) {
+        Supplier<ISearchStrategy> strategy = ESTRATEGIES.get(searchStrategy);
         if (strategy == null) {
-            throw new ApplicationException("Invalid strategy type: " + searchStratey);
+            throw new ApplicationException("Invalid strategy type: " + searchStrategy);
         }
         return strategy.get();
     }

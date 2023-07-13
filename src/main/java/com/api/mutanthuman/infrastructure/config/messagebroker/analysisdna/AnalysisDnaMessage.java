@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AnalisysDnaMessage {
+public class AnalysisDnaMessage {
     private String dna;
     private boolean isMutant;
     private Double amount;
