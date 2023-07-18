@@ -33,8 +33,7 @@ tasks.named('test') {
 
 sonar {
 	properties {
-		property("sonar.projectKey", "myProjectKey")
-		property("sonar.organization", "myOrganization")
+		property("sonar.projectKey", "demo")
 		property("sonar.host.url", "http://localhost:9000")
 	}
 }
