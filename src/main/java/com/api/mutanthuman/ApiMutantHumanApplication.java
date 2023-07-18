@@ -10,8 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories
 @EnableAutoConfiguration
 @ComponentScan
-public class ApiMutantHumanApplication {
-
+public class ApiMutantHumanApplication { 
 	public static void main(String[] args) {
 		SpringApplication.run(ApiMutantHumanApplication.class, args);
 	}
